@@ -172,7 +172,7 @@ async function createInvoice(req, res) {
         pay_currency: coin,
         order_id: orderId,
         order_description: `Payment for order ${orderId}`,
-        ipn_callback_url: `${process.env.BASE_URL || 'https://revonex-backend.onrender.com/api'}/api/nowpayments/webhook`,
+        ipn_callback_url: `${process.env.BASE_URL || 'https://revonex-backend.onrender.com'}/api/nowpayments/webhook`,
         success_url: `${process.env.FRONTEND_URL || 'https://revonex.store'}/order/success/${orderId}`,
         cancel_url: `${process.env.FRONTEND_URL || 'https://revonex.store'}/order/cancel/${orderId}`,
         payout_address: walletAddress,
