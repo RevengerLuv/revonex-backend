@@ -20,7 +20,7 @@ const sendVerificationEmail = async (email, token) => {
   try {
     const transporter = createTransporter();
     
-    const verificationUrl = `${process.env.CLIENT_URL || 'https://revonex.store/'}/verify-email/${token}`;
+    const verificationUrl = `${process.env.CLIENT_URL || 'https://revonex.store'}/verify-email/${token}`;
     
     const mailOptions = {
       from: process.env.EMAIL_FROM || '"Revonex" <noreply@revonex.com>',
@@ -89,7 +89,7 @@ const sendPasswordResetEmail = async (email, token) => {
   try {
     const transporter = createTransporter();
     
-    const resetUrl = `${process.env.CLIENT_URL || 'https://revonex.store/'}/reset-password/${token}`;
+    const resetUrl = `${process.env.CLIENT_URL || 'https://revonex.store'}/reset-password/${token}`;
     
     const mailOptions = {
       from: process.env.EMAIL_FROM || '"Revonex" <noreply@revonex.com>',

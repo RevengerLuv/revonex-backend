@@ -155,7 +155,7 @@ const createDeliveryEmail = (order, deliveryDetails) => {
           </div>
           
           <div style="text-align: center; margin: 40px 0;">
-            <a href="https://revonex.store//order/${order.orderId}/delivery" class="button">
+            <a href="https://revonex.store/order/${order.orderId}/delivery" class="button">
               View Full Delivery Page
             </a>
             <p style="color: #6b7280; font-size: 14px; margin-top: 15px;">

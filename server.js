@@ -45,7 +45,7 @@ const godaddyRoutes = require('./routes/godaddy');
 const ownerDomainRequestsRoutes = require('./routes/ownerDomainRequests');
 // Middleware - CORS must be first
 app.use(cors({
-  origin: 'https://revonex.store/',
+  origin: 'https://revonex.store',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'X-Requested-With']
@@ -801,7 +801,7 @@ res.json({
   transactionId: razorpay_payment_id,
   orderId: transaction.orderId,
   inventoryAssigned,
-  standaloneUrl: `https://revonex.store//order/${transaction.orderId}/delivery`,
+  standaloneUrl: `https://revonex.store/order/${transaction.orderId}/delivery`,
   data: {
     transaction: transaction._id,
     order: order._id
@@ -1131,7 +1131,7 @@ app.get('/api/orders/:orderId/deliver', async (req, res) => {
           deliveryDetails,
           inventoryAssigned: true,
           message: 'Inventory assigned and delivered successfully!',
-          standaloneUrl: `https://revonex.store//order/${orderId}/delivery`
+          standaloneUrl: `https://revonex.store/order/${orderId}/delivery`
         });
       } else {
         return res.json({
@@ -1205,7 +1205,7 @@ app.get('/api/orders/:orderId/deliver', async (req, res) => {
       orderId,
       deliveryDetails,
       deliveredAt: new Date(),
-      standaloneUrl: `https://revonex.store//order/${orderId}/delivery`,
+      standaloneUrl: `https://revonex.store/order/${orderId}/delivery`,
       message: 'Delivery details retrieved successfully!'
     });
     
@@ -1940,7 +1940,7 @@ const store = await Store.create({
       message: 'Store created successfully!',
       data: { 
        store, // This contains the 'storeSlug'
-    storeUrl: `https://revonex.store//store/${store.storeSlug}`
+    storeUrl: `https://revonex.store/store/${store.storeSlug}`
       }
     });
 
@@ -3653,7 +3653,7 @@ const initializeDemoData = async () => {
       console.log('✅ Demo store user created');
       console.log('📧 Email: test@example.com');
       console.log('🔑 Password: test123');
-      console.log('🏪 Store URL: https://revonex.store//store/' + demoStore.storeSlug);
+      console.log('🏪 Store URL: https://revonex.store/store/' + demoStore.storeSlug);
     }
     
     if (productCount === 0) {

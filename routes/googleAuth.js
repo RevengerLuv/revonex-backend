@@ -28,7 +28,7 @@ router.get('/google/callback',
       );
       
       // Redirect to frontend with token
-      res.redirect(`https://revonex.store//auth/google/callback?token=${token}&success=true&user=${encodeURIComponent(JSON.stringify({
+      res.redirect(`https://revonex.store/auth/google/callback?token=${token}&success=true&user=${encodeURIComponent(JSON.stringify({
         id: req.user._id,
         email: req.user.email,
         name: req.user.name,
@@ -40,7 +40,7 @@ router.get('/google/callback',
       
     } catch (error) {
       console.error('Google callback error:', error);
-      res.redirect(`https://revonex.store//login?error=${encodeURIComponent('Google authentication failed')}`);
+      res.redirect(`https://revonex.store/login?error=${encodeURIComponent('Google authentication failed')}`);
     }
   }
 );
@@ -62,7 +62,7 @@ router.post('/google/token', async (req, res) => {
       code,
       client_id: process.env.GOOGLE_CLIENT_ID || '233054564282-9bkk084dbqombdtinrbpdn9utmd1636k.apps.googleusercontent.com',
       client_secret: process.env.GOOGLE_CLIENT_SECRET || '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',
-      redirect_uri: 'https://revonex.store//auth/google/callback',
+      redirect_uri: 'https://revonex.store/auth/google/callback',
       grant_type: 'authorization_code'
     });
     

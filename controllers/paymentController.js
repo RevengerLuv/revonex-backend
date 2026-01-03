@@ -780,7 +780,7 @@ const createCryptoPayment = async (req, res) => {
       cryptocurrency: 'BTC',
       status: 'pending',
       paymentAddress: '1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX',
-      paymentUrl: `https://revonex.store//payment/crypto/${order.orderId}`,
+      paymentUrl: `https://revonex.store/payment/crypto/${order.orderId}`,
       instructions: 'For testing: This is a mock crypto payment'
     };
     

@@ -34,7 +34,7 @@ if (process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET) {
     passport.authenticate('google', { failureRedirect: '/login' }),
     (req, res) => {
       // Successful authentication, redirect home
-      res.redirect('https://revonex.store/');
+      res.redirect('https://revonex.store');
     }
   );
 } else {
