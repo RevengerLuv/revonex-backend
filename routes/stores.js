@@ -137,13 +137,13 @@ module.exports = function(upload) {
           images = product.images.map(img => {
             if (!img) return `https://picsum.photos/400/300?random=${product._id}${index}`;
             if (img.startsWith('http')) return img;
-            if (img.startsWith('/')) return `http://localhost:5000${img}`;
-            return `http://localhost:5000/${img}`;
+            if (img.startsWith('/')) return `https://revonex-backend.onrender.com/api${img}`;
+            return `https://revonex-backend.onrender.com/api/${img}`;
           });
         } else if (product.image && typeof product.image === 'string') {
           // Product has single image field
           const img = product.image;
-          images = [img.startsWith('http') ? img : `http://localhost:5000${img}`];
+          images = [img.startsWith('http') ? img : `https://revonex-backend.onrender.com/api${img}`];
         } else {
           // Default image
           images = [`https://picsum.photos/400/300?random=${product._id}${index}`];

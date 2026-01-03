@@ -5,7 +5,7 @@ const User = require('../models/User');
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID || '233054564282-9bkk084dbqombdtinrbpdn9utmd1636k.apps.googleusercontent.com',
     clientSecret: process.env.GOOGLE_CLIENT_SECRET || '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',
-    callbackURL: 'http://localhost:5000/api/auth/google/callback',
+    callbackURL: 'https://revonex-backend.onrender.com/api/api/auth/google/callback',
     passReqToCallback: true
   },
   async (req, accessToken, refreshToken, profile, done) => {
